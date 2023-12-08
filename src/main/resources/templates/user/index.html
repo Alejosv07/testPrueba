@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+	<title th:text="${title}"></title>
+</head>
+
+<body>
+	<section class="text-white bg-success p-4" th:if="${messageSucces != null}" th:text="${messageSucces}"></section>
+	<section th:if="${messageError != null}" th:text="${messageError}"></section>
+	<h1 class="text-center p-4">Prueba técnica</h1>
+	<a class="text-center d-block pb-4" th:href="@{/user/add}">Agregar</a>
+	<br>
+	<div class="d-flex justify-content-center align-items-center">
+		<table class="table table-striped mx-4">
+			<thead>
+				<tr>
+					<th>Nombre completo</th>
+					<th>Usuario</th>
+					<th>Correo Electrónico</th>
+					<th>Teléfono</th>
+					<th>Dirección</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody th:each="user: ${listUser}">
+				<tr>
+					<td th:text="${user.fullName}"></td>
+					<td th:text="${user.userName}"></td>
+					<td th:text="${user.email}"></td>
+					<td th:text="${user.phone}"></td>
+					<td th:text="${user.address}"></td>
+					<td>
+						<a class="btn btn-danger" th:href="@{/user/remove/}+${user.id}">Eliminar</a>
+						<a class="btn btn-warning" th:href="@{/user/update/}+${user.id}">Editar</a>
+						<a class="btn btn-primary" th:href="@{/user/details/}+${user.id}">Detalles</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

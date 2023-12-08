@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+	<title th:text="${title}"></title>
+</head>
+
+<body>
+	<h1 class="text-center p-4">Prueba técnica</h1>
+	<p class="d-flex justify-content-center">
+		<a class="pb-4" th:href="@{/user/index}">Inicio</a>
+	</p>
+	<div class="d-flex justify-content-center align-items-center">
+		<form th:object="${user}" class="rounded shadow-sm p-2" th:action="@{/user/add}" method="post">
+			<p class="fw-bold">Agregar</p>
+			<div class="mb-3">
+				<label for="fullname" class="form-label">Nombre completo</label>
+				<input class="form-control" th:field="*{fullName}" id="fullname">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">
+				</div>
+			</div>
+			<div class="mb-3">
+				<label for="user" class="form-label">Usuario</label>
+				<input class="form-control" th:field="*{userName}" id="user">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Correo</label>
+				<input class="form-control" th:field="*{email}" id="email">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+			</div>
+			<div class="mb-3">
+				<label for="phone" class="form-label">Celular</label>
+				<input class="form-control" th:field="*{phone}" id="phone">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+			</div>
+			<div class="mb-3">
+				<label for="address" class="form-label">Direccion</label>
+				<input class="form-control" th:field="*{address}" id="address">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+			</div>
+			<input type="submit" class="btn btn-primary w-100" value="Agregar">
+		</form>
+	</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
