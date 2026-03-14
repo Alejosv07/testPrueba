@@ -14,7 +14,7 @@ Contiene 2 usuarios
 ## Alugnas capturas
 **Index:**
 <br/>
-![img](capIndex.png)
+![img](preview.png)
 <br/>
 **Agregar:**
 <br/>
