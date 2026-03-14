@@ -18,13 +18,13 @@ Contiene 2 usuarios
 <br/>
 **Agregar:**
 <br/>
-![img](capAdd.PNG)
+![img](capAdd.png)
 <br/>
 **Editar:**
 <br/>
-![img](capDetalles.PNG)
+![img](capDetalles.png)
 <br/>
 **Detalles:**
 <br/>
-![img](capDetalles.PNG)
+![img](capDetalles.png)
 <br/>
